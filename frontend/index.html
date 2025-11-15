@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Shop Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <h1>Welcome to Nikhil's Sweet Shop</h1>
+    <div class="spinner"></div>
+    <h3>Please Wait...</h3>
+  </div>
+
+  <!-- Main UI (hidden until loader finishes) -->
+  <div class="container" id="mainContent" style="display: none;">
+    <header>
+      <h1>Sweet Shop Management System</h1>
+      <p>Manage sweets like a pro – Add, Delete, Search, Restock & Purchase</p>
+    </header>
+
+    <!-- Add Sweet Form -->
+    <section class="form-section">
+      <h2>Add New Sweet</h2>
+      <form id="addSweetForm">
+        <input type="number" placeholder="Sweet ID" id="sweetId" required />
+        <input type="text" placeholder="Name" id="sweetName" required />
+        <input type="text" placeholder="Category (e.g., Nut-Based)" id="sweetCategory" required />
+        <input type="number" placeholder="Price (₹)" id="sweetPrice" required />
+        <input type="number" placeholder="Quantity" id="sweetQuantity" required />
+        <button type="submit">Add Sweet</button>
+      </form>
+    </section>
+
+    <!-- Search Inventory -->
+    <section class="filter-section">
+      <h2> Search Inventory</h2>
+      <div class="price-filter-container">
+        <input type="text" id="searchInput" placeholder="Search by name or category..." />
+        <div class="price-range">
+          <input type="number" id="minPrice" placeholder="Min Price (₹)" />
+          <input type="number" id="maxPrice" placeholder="Max Price (₹)" />
+        </div>
+      </div>
+    </section>
+
+    <!--  Sorting Options -->
+<section class="sort-section">
+    <h2>Sort Sweets</h2>
+    <div class="sort-controls">
+      <select id="sortField">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+        <option value="quantity">Quantity</option>
+      </select>
+  
+      <select id="sortDirection">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+  </section>
+  
+
+    <!--     Sweet Cards -->
+    <section class="inventory-section">
+      <h2>Current Inventory</h2>
+      <div id="sweetList" class="sweet-grid"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

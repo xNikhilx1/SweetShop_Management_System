@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 30px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+header p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* SECTION TITLES */
+section h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 6px;
+}
+
+/* FORM */
+.form-section form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.form-section input {
+  flex: 1 1 150px;
+  padding: 10px 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.form-section input:focus {
+  border-color: #409eff;
+  background: #fff;
+  outline: none;
+}
+
+.form-section button {
+  background: #409eff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-section button:hover {
+  background: #337ecc;
+}
+
+/* FILTER BAR */
+.price-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.price-range {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.price-range input,
+#searchInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.price-range input:focus,
+#searchInput:focus {
+  border-color: #409eff;
+  background: #fff;
+  outline: none;
+}
+
+/* SWEET GRID */
+.sweet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.sweet-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.sweet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sweet-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  color: #34495e;
+}
+
+.sweet-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.card-buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-buttons button {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: white;
+}
+
+.card-buttons .delete {
+  background-color: #e74c3c;
+}
+
+.card-buttons .purchase {
+  background-color: #2ecc71;
+}
+
+.card-buttons .restock {
+  background-color: #2980b9;
+}
+
+.card-buttons button:hover {
+  opacity: 0.85;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#loader h1 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #e0e0e0;
+  border-top: 5px solid #409eff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .form-section form {
+    flex-direction: column;
+  }
+
+  .form-section input,
+  .form-section button {
+    width: 100%;
+  }
+
+  .price-range {
+    flex-direction: column;
+  }
+
+  .price-range input {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      padding: 24px;
+    }
+  
+    .container {
+      padding: 24px;
+      max-width: 100%;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    .form-section form {
+      gap: 10px;
+      justify-content: space-between;
+    }
+  
+    .form-section input,
+    .price-range input,
+    #searchInput {
+      width: 200px;
+    }
+  
+    .form-section button {
+      padding: 10px 16px;
+      font-size: 1rem;
+    }
+  
+    .price-filter-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .sweet-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+  
+    .sweet-card {
+      padding: 18px;
+    }
+  
+    .sweet-card h3 {
+      font-size: 1.15rem;
+    }
+  
+    .sweet-card p {
+      font-size: 0.9rem;
+    }
+  
+    .card-buttons button {
+      padding: 6px 8px;
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* SORTING DROPDOWNS */
+.sort-section {
+    margin-bottom: 30px;
+  }
+  
+  .sort-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .sort-controls select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #dcdfe6;
+    background: #fafafa;
+    transition: 0.2s ease;
+  }
+  
+  .sort-controls select:focus {
+    outline: none;
+    border-color: #409eff;
+    background: #fff;
+  }
+  
